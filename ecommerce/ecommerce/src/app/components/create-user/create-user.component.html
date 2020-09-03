@@ -1,0 +1,56 @@
+
+<div class="h-100 bg-plum-plate bg-animation">
+    <div class="d-flex h-100 justify-content-center align-items-center">
+        <div class="mx-auto app-login-box col-md-8">
+            <div class="modal-dialog w-100 mx-auto">
+
+                <div class="modal-content formulario-rplogin" style="border-color: #8dc63f;">
+                    <div class="m-2 r-3">
+                        <div class="h5 modal-title text-left" class="m-2">
+                            <h2 style="color: #10c05f;" class="mt-2 ">Registro de usuario</h2>
+                            <div>
+                                <p>Por favor ingrese sus datos
+                                </p>
+                            </div>
+                        </div>
+                        <div class="alert-mensaje" *ngIf="mensaje" style="color: red;">{{mensaje}}</div>
+                        <div class="modal-body">
+                            <div class="h5 modal-title text-left">
+                                <h5 style="color: #008c4f;" class="mt-2">Datos del usuario</h5>
+                            </div>
+                            <hr style="height:3px;border:none;color: #008c4f;background-color: #008c4f;">
+                            <div class="container login">
+                                <form [formGroup]="create" (ngSubmit)='crearUsuario(create.value)'>
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Nombre <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="nombre.invalid && (nombre.dirty || nombre.touched)" type="text" class="form-control" formControlName="nombre" name="nombre" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Apellido <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="apellido.invalid && (apellido.dirty || apellido.touched)" type="text" class="form-control" formControlName="apellido" name="apellido" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Usuario <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="usuario.invalid && (usuario.dirty || usuario.touched)" type="text" class="form-control" formControlName="usuario" name="usuario" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contrasenia">Contraseña <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="contrasenia.invalid && (contrasenia.dirty || contrasenia.touched)" type="password" class="form-control" formControlName="contrasenia" name="contrasenia" />
+                                        </div>
+                                        <div class="form-group mb-0 text-center">
+                                            <button class="btn btn-success" type="submit">
+                                            <em class="mdi mdi-login"></em> Registrar </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
