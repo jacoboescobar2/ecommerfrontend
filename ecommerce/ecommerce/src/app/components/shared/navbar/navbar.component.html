@@ -5,25 +5,25 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
         <div class="navbar-nav d-flex justify-content-end w-100">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Crear orden</a>
+                  <a class="nav-link" href="#">Productos</a>
                 </li>
                 <li *ngIf="administrador" class="nav-item">
-                    <a class="nav-link" href="#">Gestionar usuarios</a>
+                    <a class="nav-link" [routerLink]="['/gestionar-usuario']" routerLinkActive="router-link-active">Gestionar usuarios</a>
                 </li>
                 <li *ngIf="empleado || administrador" class="nav-item">
-                    <a class="nav-link" href="#">Gestionar productos</a>
+                    <a class="nav-link" >Gestionar productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Revisar ordenes</a>
+                    <a class="nav-link">Revisar ordenes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cerrar sesión</a>
+                    <a class="nav-link" (click)="logOut()">Cerrar sesión</a>
                 </li>
-              </ul>
+            </ul>
         </div>
     </div>
 </nav>

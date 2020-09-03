@@ -8,6 +8,6 @@ export class User {
   password: string;
   cash: number;
   state: boolean;
-  rol: [];
+  rol: string;
   orders: Order[];
 }

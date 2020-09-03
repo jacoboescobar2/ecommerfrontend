@@ -1,2 +1,41 @@
 <app-navbar></app-navbar> 
-<p>home works!</p>
+
+<div *ngIf="administrador || empleado" class="container m-5">
+    <a (click)="crearNuevo()" class="btn btn-success"><i class="fa fa-pencil-square-o " aria-hidden="true ">Crear un nuevo producto</i></a>
+</div>
+<div class="container m-5">
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Agregar a orden</th>
+            <th *ngIf="administrador || empleado" scope="col">Editar</th>
+            <th *ngIf="administrador || empleado" scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <th>{{producto.name}}</th>
+            <td>{{producto.description}}</td>
+            <td>{{producto.baseprice}}</td>
+            <td>{{producto.inventoryquantity}}</td>
+            <td>{{producto.productstatus}}</td>
+            <td>
+                <a [routerLink]="['/editar-producto/', producto.id]" class="btn btn-primary"><i class="fa fa-pencil-square-o " aria-hidden="true ">Agregar a mi orden</i></a>
+            </td>
+            <td *ngIf="administrador || empleado">
+                <a [routerLink]="['/editar-producto/', producto.productid]" class="btn btn-warning"><i class="fa fa-pencil-square-o " aria-hidden="true ">Editar</i></a>
+            </td>
+            <td *ngIf="administrador || empleado">
+                <a (click)="deleteProduct(producto)" class="btn btn-danger"><i class="fa fa-pencil-square-o " aria-hidden="true ">Eliminar</i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>

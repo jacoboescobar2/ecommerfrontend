@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+
+<div class="h-100 bg-plum-plate bg-animation">
+    <div class="d-flex h-100 justify-content-center align-items-center">
+        <div class="mx-auto app-login-box col-md-8">
+            <div class="modal-dialog w-100 mx-auto">
+
+                <div class="modal-content formulario-rplogin" style="border-color: #8dc63f;">
+                    <div class="m-2 r-3">
+                        <div class="h5 modal-title text-left" class="m-2">
+                            <h2 style="color: #10c05f;" class="mt-2 ">Crear producto</h2>
+                            <div>
+                                <p>Por favor ingrese los datos.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="alert-mensaje"></div>
+                        <div class="modal-body">
+                            <hr style="height:3px;border:none;color: #008c4f;background-color: #008c4f;">
+                            <div class="container login">
+                                <form [formGroup]="create" (ngSubmit)='crearProducto(create.value)'>
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Nombre <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="nombre.invalid && (nombre.dirty || nombre.touched)" type="text" class="form-control" formControlName="nombre" name="nombre" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Descripción <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="descripcion.invalid && (descripcion.dirty || descripcion.touched)" type="text" class="form-control" formControlName="descripcion" name="descripcion" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Precio base <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="precio.invalid && (precio.dirty || precio.touched)" type="text" class="form-control" formControlName="precio" name="precio" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Estado del producto <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="estado.invalid && (estado.dirty || estado.touched)" type="text" class="form-control" formControlName="estado" name="estado" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Cantidad en inventario <span class="obligatorio-asterisco">*</span></label>
+                                            <input [class.invalid-method]="cantidad.invalid && (cantidad.dirty || cantidad.touched)" type="text" class="form-control" formControlName="cantidad" name="cantidad" />
+                                        </div>
+
+                                        <div class="form-group mt-3 mb-0 text-center">
+                                            <button class="btn btn-success" type="submit">
+                                            <em class="mdi mdi-login"></em> Crear producto </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

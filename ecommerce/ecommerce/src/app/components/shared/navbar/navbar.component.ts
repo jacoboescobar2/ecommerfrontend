@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,12 +12,12 @@ export class NavbarComponent implements OnInit {
   administrador = false;
   usuario = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     let resp = JSON.parse(localStorage.getItem('usuario'));
 
-    if(resp){ 
+    if(resp){
       console.log(resp);
       if(resp.rol[0] === 'ROLE_EMPLEADO'){
        this.empleado = true;
@@ -29,6 +30,12 @@ export class NavbarComponent implements OnInit {
       }
     }
 
+  }
+
+
+  logOut() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }

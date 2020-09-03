@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
     private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log("Cargue esto");
   }
 
   login = this.fb.group({

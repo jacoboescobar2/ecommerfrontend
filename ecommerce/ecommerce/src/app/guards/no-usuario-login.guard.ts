@@ -10,10 +10,10 @@ export class NoUsuarioLoginGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     if (localStorage.getItem('usuario') === null || localStorage.getItem('usuario') === undefined 
     || localStorage.getItem('usuario') === '' || localStorage.getItem('usuario') === 'null') {
-      return false;
+      return true;
     } else {
       this.router.navigate(['/home']);
-      return true;
+      return false;
     }
   }
 }

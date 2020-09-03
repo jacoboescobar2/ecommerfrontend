@@ -6,6 +6,10 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { HomeComponent } from './components/home/home.component';
 import { NoUsuarioLoginGuard } from './guards/no-usuario-login.guard';
 import { UsuarioLoginGuard } from './guards/usuario-login.guard';
+import { GestionarUsuariosComponent } from './components/gestionar-usuarios/gestionar-usuarios.component';
+import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
+import { ProductsComponent } from './components/products/products.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 
 const routes: Routes = [
@@ -13,6 +17,10 @@ const routes: Routes = [
   { path: "create-user", component: CreateUserComponent,  canActivate: [NoUsuarioLoginGuard]},
   { path: "change-password", component: ChangePasswordComponent,  canActivate: [NoUsuarioLoginGuard]},
   { path: "home", component: HomeComponent,   canActivate: [UsuarioLoginGuard]},
+  { path: "gestionar-usuario", component: GestionarUsuariosComponent, canActivate: [UsuarioLoginGuard]},
+  { path: "crear-producto", component: CreateProductComponent, canActivate: [UsuarioLoginGuard]},
+  { path: "editar-usuario/:id", component: EditarUsuarioComponent, canActivate: [UsuarioLoginGuard]},
+  { path: "editar-producto/:id", component: ProductsComponent, canActivate: [UsuarioLoginGuard]},
   { path: "**", pathMatch: 'full' , redirectTo: 'login' }
 ];
 

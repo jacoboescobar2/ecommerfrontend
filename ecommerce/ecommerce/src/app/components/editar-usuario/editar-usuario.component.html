@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="h-100 bg-plum-plate bg-animation">
+    <div class="d-flex h-100 justify-content-center align-items-center">
+        <div class="mx-auto app-login-box col-md-8">
+            <div class="modal-dialog w-100 mx-auto">
+
+                <div class="modal-content formulario-rplogin" style="border-color: #8dc63f;">
+                    <div class="m-2 r-3">
+                        <div class="h5 modal-title text-left" class="m-2">
+                            <h2 style="color: #10c05f;" class="mt-2 ">Editar Usuario</h2>
+                            <div>
+                                <p>Por favor actulice los datos
+                                </p>
+                            </div>
+                        </div>
+                        <div class="alert-mensaje"style="color: red;"></div>
+                        <div class="modal-body">
+                            <div class="h5 modal-title text-left">
+                                <h5 style="color: #008c4f;" class="mt-2">Datos del usuario</h5>
+                            </div>
+                            <hr style="height:3px;border:none;color: #008c4f;background-color: #008c4f;">
+                            <div class="container login">
+                                <form [formGroup]="update" (ngSubmit)='actualizarUsuario(update.value)'>
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="emailaddress">Rol</label>
+                                            <input [class.invalid-method]="rol.invalid && (rol.dirty || rol.touched)" type="text" class="form-control" formControlName="rol" name="rol" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contrasenia">Estado </label>
+                                            <input [class.invalid-method]="estado.invalid && (estado.dirty || estado.touched)" type="text" class="form-control" formControlName="estado" name="estado" />
+                                        </div>
+                                        <div class="form-group mb-0 text-center">
+                                            <button class="btn btn-success" type="submit">
+                                            <em class="mdi mdi-login"></em> Actualizar </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

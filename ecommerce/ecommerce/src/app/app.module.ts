@@ -11,6 +11,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductsComponent } from './components/products/products.component';
+import { GestionarUsuariosComponent } from './components/gestionar-usuarios/gestionar-usuarios.component';
+import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChangePasswordComponent,
     HomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ProductsComponent,
+    GestionarUsuariosComponent,
+    EditarUsuarioComponent,
+    CreateProductComponent
   ],
   imports: [
     BrowserModule,

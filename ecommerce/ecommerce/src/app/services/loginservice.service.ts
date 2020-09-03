@@ -10,20 +10,10 @@ import { environment } from '../../environments/environment';
 })
 export class LoginserviceService {
 
-
-  loggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  log = this.loggedIn.asObservable();
-
   url = urlrest.API_ENDPOINTLOGIN;
 
-    constructor(private http: HttpClient) { 
-    this.loggedIn.next(JSON.parse(localStorage.getItem('Logeado')));
+    constructor(private http: HttpClient) {
   }
-
-  changeValue() {
-    this.loggedIn.next(!this.loggedIn.value);
-  }
-
   httpOptions = {
     headers: new HttpHeaders({
       'Access-Control-Allow-Headers':'X-Requested-With,content-type',
@@ -33,28 +23,11 @@ export class LoginserviceService {
     })
   };
 
-
-  /*login(username, password): Observable<any> {
-    const body = new HttpParams()
-      .set('username', username)
-      .set('password', password);
-    return this.http.post(environment.apiUri + this.url,
-      body.toString(),
-      {
-        headers: new HttpHeaders()
-          .set('Content-Type', 'application/x-www-form-urlencoded')
-          .set('Access-Control-Allow-Origin', '*')
-          .set('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, PATCH, DELETE')
-      }
-    );
-  }*/
-
   login(credentials): Observable<any>{
     return this.http.post(environment.apiUri + this.url,{
       username: credentials.usuario,
       password: credentials.contrasenia
     }, this.httpOptions);
   }
-
 
 }
